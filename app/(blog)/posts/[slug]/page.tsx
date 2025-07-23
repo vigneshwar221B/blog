@@ -15,6 +15,7 @@ import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { postQuery, settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import Comments from "@/app/components/comments";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -96,10 +97,15 @@ export default async function PostPage({ params }: Props) {
           </div>
         </div>
         {post.content?.length && (
-          <PortableText
-            className="mx-auto max-w-2xl"
-            value={post.content as PortableTextBlock[]}
-          />
+          <>
+            <PortableText
+              className="mx-auto max-w-2xl"
+              value={post.content as PortableTextBlock[]}
+            />
+            <div className="mx-auto max-w-2xl mt-16">
+              <Comments />
+            </div>
+          </>
         )}
       </article>
       <aside>

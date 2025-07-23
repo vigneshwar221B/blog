@@ -1,6 +1,7 @@
 import "../globals.css";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Giscus from '@giscus/react';
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import type { Metadata } from "next";
 import {
