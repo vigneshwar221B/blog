@@ -41,6 +41,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+.git
+
 # Env files created by scripts for working locally
 .env
 .env.local
