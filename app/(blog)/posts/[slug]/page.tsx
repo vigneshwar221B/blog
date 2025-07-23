@@ -84,7 +84,7 @@ export default async function PostPage({ params }: Props) {
         <div className="mb-8 sm:mx-0 md:mb-16">
           <CoverImage image={post.coverImage} priority />
         </div>
-        <div className="mx-auto max-w-2xl">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mb-6 block md:hidden">
             {post.author && (
               <Avatar name={post.author.name} picture={post.author.picture} />
@@ -99,10 +99,10 @@ export default async function PostPage({ params }: Props) {
         {post.content?.length && (
           <>
             <PortableText
-              className="mx-auto max-w-2xl"
+              className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8"
               value={post.content as PortableTextBlock[]}
             />
-            <div className="mx-auto max-w-2xl mt-16">
+            <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 mt-16">
               <Comments />
             </div>
           </>
