@@ -68,7 +68,7 @@ export default async function PostPage({ params }: Props) {
   return (
     <div className="container mx-auto px-5">
       <h2 className="mb-16 mt-10 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
-        <Link href="/" className="hover:underline">
+        <Link href="/" className="hover">
           {settings?.title || demo.title}
         </Link>
       </h2>
@@ -90,7 +90,7 @@ export default async function PostPage({ params }: Props) {
               <Avatar name={post.author.name} picture={post.author.picture} />
             )}
           </div>
-          <div className="mb-6 text-lg">
+          <div className="mb-6 text-lg underline bold">
             <div className="mb-4 text-lg">
               <DateComponent dateString={post.date} />
             </div>
@@ -102,6 +102,9 @@ export default async function PostPage({ params }: Props) {
               className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8"
               value={post.content as PortableTextBlock[]}
             />
+
+            <hr className="my-8 border-gray-300 w-3/4 mx-auto" />
+
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 mt-16">
               <Comments />
             </div>

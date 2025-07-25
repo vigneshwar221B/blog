@@ -1,3 +1,5 @@
+@import url('https://unpkg.com/automad-prism-themes/dist/prism-tokyo-night.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
