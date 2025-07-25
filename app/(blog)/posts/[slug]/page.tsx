@@ -90,7 +90,7 @@ export default async function PostPage({ params }: Props) {
               <Avatar name={post.author.name} picture={post.author.picture} />
             )}
           </div>
-          <div className="mb-6 text-lg underline bold">
+          <div className="mb-6 text-lg bold">
             <div className="mb-4 text-lg">
               <DateComponent dateString={post.date} />
             </div>
