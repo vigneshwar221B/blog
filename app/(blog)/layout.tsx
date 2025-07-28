@@ -19,6 +19,7 @@ import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import Script from 'next/script'
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch({
@@ -68,6 +69,13 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${inter.variable} bg-white text-black`}>
+      <head>
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="4e881a43-5d66-410e-b7ed-dffac037dcbc"
+        />
+      </head>
       <body>
         <section className="min-h-screen">
           {isDraftMode && <AlertBanner />}
