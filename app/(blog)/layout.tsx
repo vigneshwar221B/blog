@@ -92,7 +92,6 @@ export default async function RootLayout({
                       href="https://github.com/vigneshwar221B"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-black transition-colors"
                     >
                       <FaGithub className="h-10 w-10" />
                     </a>
