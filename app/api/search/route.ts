@@ -1,4 +1,3 @@
-// api/search/route.ts
 import { NextResponse } from "next/server";
 import { sanityFetch } from "@/sanity/lib/fetch";
 
@@ -16,7 +15,7 @@ export async function GET(req: Request) {
       title,
       slug
     }`,
-    params: { query },
+    params: { $query: query } ,
   });
 
   return NextResponse.json({ results });
