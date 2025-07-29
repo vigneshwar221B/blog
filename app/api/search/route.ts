@@ -10,12 +10,12 @@ export async function GET(req: Request) {
   }
 
   const results = await sanityFetch({
-    query: `*[_type == "post" && title match $query + "*"]{
+    query: `*[_type == "post" && title match $query]{
       _id,
       title,
       slug
     }`,
-    params: { $query: query } ,
+    params: { query: `${query}*` },
   });
 
   return NextResponse.json({ results });
