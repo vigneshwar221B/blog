@@ -8,6 +8,8 @@
  *
  */
 
+'use client'
+
 import {
   PortableText,
   type PortableTextComponents,
@@ -15,31 +17,10 @@ import {
 } from "next-sanity";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import { Refractor, registerLanguage } from 'react-refractor'
+import { CodeBlock, dracula, oneLight } from '@react-email/code-block';
 
-import bash from 'refractor/bash';
-import json from 'refractor/json';
-import yaml from 'refractor/yaml';
-import docker from 'refractor/docker';
-import ini from 'refractor/ini';
-import terraform from 'refractor/hcl';
-import js from 'refractor/javascript';
-import ts from 'refractor/typescript';
-import py from 'refractor/python';
-import cpp from 'refractor/cpp';
-import swift from 'refractor/swift';
-
-registerLanguage(bash);
-registerLanguage(json);
-registerLanguage(yaml);
-registerLanguage(docker);
-registerLanguage(ini);
-registerLanguage(terraform);
-registerLanguage(js);
-registerLanguage(ts);
-registerLanguage(py);
-registerLanguage(cpp);
-registerLanguage(swift);
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 export default function CustomPortableText({
   className,
@@ -48,6 +29,15 @@ export default function CustomPortableText({
   className?: string;
   value: PortableTextBlock[];
 }) {
+  const { theme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null // avoid hydration mismatch
+
   const components: PortableTextComponents = {
     block: {
       h5: ({ children }) => (
@@ -92,12 +82,14 @@ export default function CustomPortableText({
     </figure>
   );
 },
-
-
     code: ({ value }) => {
       return (
           <div className="text-lg p-5 overflow-auto leading-relaxed">
-            <Refractor language={value.language} value={value.code} />
+            <CodeBlock
+              code={value.code}
+              theme={resolvedTheme === 'dark' ? dracula : oneLight}
+              language={value.language}
+            />
           </div>
       );
     },
