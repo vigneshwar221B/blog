@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { sanityFetch } from "@/sanity/lib/fetch";
+import { QueryParams } from "sanity";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -15,7 +16,7 @@ export async function GET(req: Request) {
       title,
       slug
     }`,
-    params: { query: `${query}*` },
+    params: { query: `${query}*` } as QueryParams,
   });
 
   return NextResponse.json({ results });
