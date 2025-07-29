@@ -76,7 +76,7 @@ export default function SearchBox() {
                     href={`/posts/${post.slug.current}`}
                     onClick={() => setOpen(false)}
                   >
-                    <li className="p-2 hover:bg-gray-100 cursor-pointer">
+                    <li className="p-2 hover:bg-[#ff8a65] hover:text-[#fff] cursor-pointer">
                       {post.title}
                     </li>
                   </Link>

@@ -53,7 +53,7 @@ function HeroPost({
       </Link>
       <div className="mb-20 md:mb-28 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8">
         <div>
-          <h3 className="text-pretty mb-4 text-4xl leading-tight lg:text-6xl">
+          <h3 className="text-pretty mb-4 text-4xl leading-tight lg:text-6xl hover:underline decoration-[#ff5722] decoration-[0.3rem]">
             <Link href={`/posts/${slug}`} className="hover">
               {title}
             </Link>
@@ -104,7 +104,7 @@ export default async function Page() {
             More Stories
           </h2>
           <Suspense>
-            <MoreStories skip={heroPost._id} limit={100} />
+            <MoreStories skip={heroPost._id} limit={10} />
           </Suspense>
         </aside>
       )}

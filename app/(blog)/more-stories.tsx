@@ -23,7 +23,7 @@ export default async function MoreStories(params: {
               <Link href={`/posts/${slug}`} className="group mb-5 block">
                 <CoverImage image={coverImage} priority={false} />
               </Link>
-              <h3 className="text-balance mb-3 text-3xl leading-snug">
+              <h3 className="text-balance mb-3 text-3xl leading-snug hover:underline decoration-[#ff5722] decoration-[0.3rem]">
                 <Link href={`/posts/${slug}`} className="hover">
                   {title}
                 </Link>
