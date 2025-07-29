@@ -1,18 +1,18 @@
-'use client'
+"use client";
 
-import Giscus from '@giscus/react'
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import Giscus from "@giscus/react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Comments() {
-  const { theme, resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
-  if (!mounted) return null // avoid hydration mismatch
+  if (!mounted) return null; // avoid hydration mismatch
 
   return (
     <Giscus
@@ -26,9 +26,9 @@ export default function Comments() {
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="top"
-      theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
+      theme={resolvedTheme === "dark" ? "dark" : "light"}
       lang="en"
       loading="lazy"
     />
-  )
+  );
 }

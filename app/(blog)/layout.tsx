@@ -18,7 +18,7 @@ import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
-import Script from 'next/script'
+import Script from "next/script";
 import { Providers } from "./providers";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -78,11 +78,11 @@ export default async function RootLayout({
       </head>
       <body>
         <Providers>
-        <section className="min-h-screen">
-          {isDraftMode && <AlertBanner />}
-          <main>{children}</main>
-          <footer className="bg-accent-1 border-accent-2 border-t">
-            <div className="container mx-auto px-5">
+          <section className="min-h-screen">
+            {isDraftMode && <AlertBanner />}
+            <main>{children}</main>
+            <footer className="bg-accent-1 border-accent-2 border-t">
+              <div className="container mx-auto px-5">
                 <div className="flex flex-col items-center py-20 lg:flex-row">
                   <h3 className="mb-10 text-center text-4xl font-bold leading-tight tracking-tighter lg:mb-0 lg:w-1/2 lg:pr-4 lg:text-left lg:text-5xl underline decoration-[#64b5f6] decoration-[0.3rem]">
                     Connect with me at
@@ -112,13 +112,12 @@ export default async function RootLayout({
                     </a>
                   </div>
                 </div>
-              
-            </div>
-          </footer>
-        </section>
-        {isDraftMode && <VisualEditing />}
-        <SpeedInsights />
-      </Providers>
+              </div>
+            </footer>
+          </section>
+          {isDraftMode && <VisualEditing />}
+          <SpeedInsights />
+        </Providers>
       </body>
     </html>
   );

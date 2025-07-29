@@ -1,3 +1,10 @@
 # Ignoring generated files
+node_modules
+out
+public
+build
+.next
+.git
+.vercel
 ./sanity.types.ts
 ./schema.json

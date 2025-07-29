@@ -32,7 +32,9 @@ export default async function MoreStories(params: {
                 <DateComponent dateString={post.date} />
               </div>
               {excerpt && (
-                <p className="text-pretty mb-4 text-lg leading-relaxed">{excerpt}</p>
+                <p className="text-pretty mb-4 text-lg leading-relaxed">
+                  {excerpt}
+                </p>
               )}
               {author && <Avatar name={author.name} picture={author.picture} />}
             </article>

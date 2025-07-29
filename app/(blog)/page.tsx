@@ -27,10 +27,7 @@ function Intro(props: { title: string | null | undefined; description: any }) {
         {title}
       </h1>
       <h2 className="text-pretty text-center text-lg lg:pl-8 lg:text-left">
-        <PortableText
-          className="prose-lg"
-          value={description}
-        />
+        <PortableText className="prose-lg" value={description} />
       </h2>
 
       {/* 👇 New wrapper for Theme + Search */}
@@ -41,7 +38,6 @@ function Intro(props: { title: string | null | undefined; description: any }) {
     </section>
   );
 }
-
 
 function HeroPost({
   title,

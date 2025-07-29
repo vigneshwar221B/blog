@@ -20,7 +20,7 @@ import author from "@/sanity/schemas/documents/author";
 import post from "@/sanity/schemas/documents/post";
 import settings from "@/sanity/schemas/singletons/settings";
 import { resolveHref } from "@/sanity/lib/utils";
-import {codeInput} from '@sanity/code-input'
+import { codeInput } from "@sanity/code-input";
 
 const homeLocation = {
   title: "Home",
