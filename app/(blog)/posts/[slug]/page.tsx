@@ -67,7 +67,7 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <div className="container mx-auto px-5">
-      <h2 className="mb-16 mt-10 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
+      <h2 className="mb-16 mt-10 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter underline decoration-[#64b5f6] decoration-[0.3rem]">
         <Link href="/" className="hover">
           {settings?.title || demo.title}
         </Link>
