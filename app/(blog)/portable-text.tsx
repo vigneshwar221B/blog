@@ -51,10 +51,10 @@ export default function CustomPortableText({
   const components: PortableTextComponents = {
     block: {
       h5: ({ children }) => (
-        <h5 className="mb-2 text-sm font-semibold">{children}</h5>
+        <h5 className="mb-2 text-sm font-semibold dark:text-white">{children}</h5>
       ),
       h6: ({ children }) => (
-        <h6 className="mb-1 text-xs font-semibold">{children}</h6>
+        <h6 className="mb-1 text-xs font-semibold dark:text-white">{children}</h6>
       ),
     },
     marks: {
@@ -74,7 +74,7 @@ export default function CustomPortableText({
 
   return (
     <figure className="my-8">
-      <div className="relative w-full aspect-[16/9] mb-4">
+      <div className="relative w-full aspect-[16/9] mb-4 dark:text-white">
         <Image
           src={url}
           alt={value.alt || "Blog image"}
@@ -105,7 +105,7 @@ export default function CustomPortableText({
 }
 
   return (
-    <div className={["prose", className].filter(Boolean).join(" ")}>
+    <div className={["prose dark:prose-invert", className].filter(Boolean).join(" ")}>
       <PortableText components={components} value={value} />
     </div>
   );

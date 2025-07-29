@@ -16,6 +16,7 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { postQuery, settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Comments from "@/app/components/Comments";
+import ThemeToggle from "@/app/components/ThemeToggle";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -66,12 +67,16 @@ export default async function PostPage({ params }: Props) {
   }
 
   return (
-    <div className="container mx-auto px-5">
-      <h2 className="mb-16 mt-10 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter underline decoration-[#64b5f6] decoration-[0.3rem]">
-        <Link href="/" className="hover">
-          {settings?.title || demo.title}
-        </Link>
-      </h2>
+    <div className="container mx-auto px-5 dark:text-white">
+      <div className="mb-16 mt-10 flex items-center justify-between gap-4">
+  <h2 className="text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter dark:text-white underline decoration-[#64b5f6] decoration-[0.3rem]">
+    <Link href="/" className="hover">
+      {settings?.title || demo.title}
+    </Link>
+  </h2>
+  <ThemeToggle />
+</div>
+
       <article>
         <h1 className="text-balance mb-6 text-4xl font-semibold leading-snug tracking-tight md:text-5xl lg:text-6xl">
           {post.title}

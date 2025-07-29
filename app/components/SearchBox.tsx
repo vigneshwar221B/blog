@@ -44,7 +44,7 @@ export default function SearchBox() {
       {/* Search Icon Button */}
       <button
         onClick={() => setOpen(true)}
-        className="p-2 hover:bg-gray-100"
+        className="p-3 text-2xl sm:text-3xl transition-transform duration-200 hover:scale-125"
         aria-label="Open search"
       >
         <FaSearch />
@@ -52,14 +52,14 @@ export default function SearchBox() {
 
       {/* Overlay Popup */}
       {open && (
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div
             ref={boxRef}
-            className="bg-white rounded-sm w-full max-w-lg p-4 shadow-xl"
+            className="bg-white rounded-sm w-full max-w-lg p-2 dark:bg-black"
           >
             {/* Search Input */}
             <input
-              className="w-full border p-2 outline-none focus:ring-0 focus:outline-none"
+              className="w-full p-2 bg-white text-black dark:bg-black dark:text-white outline-none focus:ring-0 focus:outline-none"
               type="text"
               autoFocus
               value={query}
@@ -69,7 +69,7 @@ export default function SearchBox() {
 
             {/* Results */}
             {results.length > 0 && (
-              <ul className="mt-2 border shadow overflow-hidden">
+              <ul className="mt-2 shadow overflow-hidden">
                 {results.map((post) => (
                   <Link
                     key={post._id}

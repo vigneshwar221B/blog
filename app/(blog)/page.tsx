@@ -13,27 +13,35 @@ import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 import SearchBox from "../components/SearchBox";
+import ThemeToggle from "../components/ThemeToggle";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
   const description = props.description?.length
     ? props.description
     : demo.description;
+
   return (
     <section className="mt-16 mb-16 flex flex-col items-center lg:mb-12 lg:flex-row lg:justify-between">
       <h1 className="text-balance text-4xl font-bold leading-tight tracking-tighter lg:pr-8 lg:text-5xl underline decoration-[#ff5722] decoration-[0.3rem]">
-        {title || demo.title}
+        {title}
       </h1>
       <h2 className="text-pretty text-center text-lg lg:pl-8 lg:text-left">
         <PortableText
           className="prose-lg"
-          value={description?.length ? description : demo.description}
+          value={description}
         />
       </h2>
-      <SearchBox />
+
+      {/* 👇 New wrapper for Theme + Search */}
+      <div className="mt-4 flex items-center gap-4 lg:mt-0">
+        <ThemeToggle />
+        <SearchBox />
+      </div>
     </section>
   );
 }
+
 
 function HeroPost({
   title,
