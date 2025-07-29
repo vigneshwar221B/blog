@@ -15,7 +15,7 @@ import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { postQuery, settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
-import Comments from "@/app/components/comments";
+import Comments from "@/app/components/Comments";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -73,9 +73,10 @@ export default async function PostPage({ params }: Props) {
         </Link>
       </h2>
       <article>
-        <h1 className="text-balance mb-12 text-6xl font-bold leading-tight tracking-tighter md:text-7xl md:leading-none lg:text-8xl">
+        <h1 className="text-balance mb-6 text-4xl font-semibold leading-snug tracking-tight md:text-5xl lg:text-6xl">
           {post.title}
         </h1>
+
         <div className="hidden md:mb-12 md:block">
           {post.author && (
             <Avatar name={post.author.name} picture={post.author.picture} />
