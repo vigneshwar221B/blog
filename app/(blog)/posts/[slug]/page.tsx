@@ -24,7 +24,7 @@ type Props = {
 };
 
 const postSlugs = defineQuery(
-  `*[_type == "post" && defined(slug.current)]{"slug": slug.current}`
+  `*[_type == "post" && defined(slug.current)]{"slug": slug.current}`,
 );
 
 export async function generateStaticParams() {
@@ -37,7 +37,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(
   { params }: Props,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const post = await sanityFetch({
     query: postQuery,
@@ -75,6 +75,7 @@ export default async function PostPage({ params }: Props) {
             {settings?.title || demo.title}
           </Link>
         </h2>
+
         <div className="mt-4 flex items-center gap-4 lg:mt-0">
           <ThemeToggle />
           <SearchBox />
@@ -91,21 +92,25 @@ export default async function PostPage({ params }: Props) {
             <Avatar name={post.author.name} picture={post.author.picture} />
           )}
         </div>
+
         <div className="mb-8 sm:mx-0 md:mb-16">
           <CoverImage image={post.coverImage} priority />
         </div>
+
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mb-6 block md:hidden">
             {post.author && (
               <Avatar name={post.author.name} picture={post.author.picture} />
             )}
           </div>
+
           <div className="mb-6 text-lg bold">
             <div className="mb-4 text-lg">
               <DateComponent dateString={post.date} />
             </div>
           </div>
         </div>
+
         {post.content?.length && (
           <>
             <PortableText
