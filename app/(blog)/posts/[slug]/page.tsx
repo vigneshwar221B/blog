@@ -70,7 +70,7 @@ export default async function PostPage({ params }: Props) {
   return (
     <div className="container mx-auto px-5 dark:text-white">
       <div className="mb-16 mt-10 flex items-center justify-between gap-4">
-        <h2 className="text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter dark:text-white underline decoration-[#64b5f6] decoration-[0.4rem]">
+        <h2 className="text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter dark:text-white underline decoration-[#9575CD] decoration-[0.4rem] underline-offset-[0.8rem]">
           <Link href="/" className="hover">
             {settings?.title || demo.title}
           </Link>
@@ -104,8 +104,8 @@ export default async function PostPage({ params }: Props) {
             )}
           </div>
 
-          <div className="mb-6 text-lg bold">
-            <div className="mb-4 text-lg">
+          <div className="mb-6 text-lg">
+            <div className="mb-4 text-lg underline decoration-[#A5D6A7] decoration-[0.3rem] underline-offset-8">
               <DateComponent dateString={post.date} />
             </div>
           </div>
