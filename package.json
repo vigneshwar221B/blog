@@ -11,7 +11,7 @@
     "setup": "npx sanity@latest init --env .env.local",
     "postsetup": "echo 'create the read token by following the rest of the guide: https://github.com/vercel/next.js/tree/canary/examples/cms-sanity#creating-a-read-token'",
     "typegen": "sanity schema extract && sanity typegen generate",
-    "prepare": "husky"
+    "prepare": "husky && husky install"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",
@@ -49,10 +49,11 @@
     "typescript": "5.6.3"
   },
   "devDependencies": {
-    "eslint": "^9.13.0",
+    "eslint": "^9.32.0",
     "eslint-config-next": "^15.0.0",
     "eslint-config-prettier": "^10.1.8",
-    "husky": "^9.1.7",
+    "eslint-plugin-prettier": "^5.5.3",
+    "husky": "^8.0.0",
     "lint-staged": "^16.1.2",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14"
