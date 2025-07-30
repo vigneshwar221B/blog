@@ -17,13 +17,14 @@ import { postQuery, settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Comments from "@/app/components/Comments";
 import ThemeToggle from "@/app/components/ThemeToggle";
+import SearchBox from "@/app/components/SearchBox";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 const postSlugs = defineQuery(
-  `*[_type == "post" && defined(slug.current)]{"slug": slug.current}`,
+  `*[_type == "post" && defined(slug.current)]{"slug": slug.current}`
 );
 
 export async function generateStaticParams() {
@@ -36,7 +37,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(
   { params }: Props,
-  parent: ResolvingMetadata,
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const post = await sanityFetch({
     query: postQuery,
@@ -74,7 +75,10 @@ export default async function PostPage({ params }: Props) {
             {settings?.title || demo.title}
           </Link>
         </h2>
-        <ThemeToggle />
+        <div className="mt-4 flex items-center gap-4 lg:mt-0">
+          <ThemeToggle />
+          <SearchBox />
+        </div>
       </div>
 
       <article>

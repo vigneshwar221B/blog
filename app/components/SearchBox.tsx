@@ -44,7 +44,7 @@ export default function SearchBox() {
       {/* Search Icon Button */}
       <button
         onClick={() => setOpen(true)}
-        className="p-3 text-2xl sm:text-3xl transition-transform duration-200 hover:scale-125"
+        className="p-2 text-xl sm:text-2xl transition-transform duration-200 hover:scale-125"
         aria-label="Open search"
       >
         <FaSearch />
@@ -64,7 +64,7 @@ export default function SearchBox() {
               autoFocus
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search posts..."
+              placeholder="Find something to read..."
             />
 
             {/* Results */}
