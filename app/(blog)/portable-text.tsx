@@ -17,10 +17,10 @@ import {
 } from "next-sanity";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import { CodeBlock, dracula, oneLight } from "@react-email/code-block";
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import CodeBlock from "@/app/components/CodeBlock";
 
 export default function CustomPortableText({
   className,
@@ -89,10 +89,15 @@ export default function CustomPortableText({
       code: ({ value }) => {
         return (
           <div className="text-lg p-5 overflow-auto leading-relaxed">
-            <CodeBlock
+            {/* <CodeBlock
               code={value.code}
               theme={resolvedTheme === "dark" ? dracula : oneLight}
               language={value.language}
+            /> */}
+            <CodeBlock
+              code = {value.code}
+              language={value.language}
+              theme={resolvedTheme ?? "light"}
             />
           </div>
         );

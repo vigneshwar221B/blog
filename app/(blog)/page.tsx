@@ -12,8 +12,8 @@ import type { HeroQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
-import SearchBox from "../components/SearchBox";
-import ThemeToggle from "../components/ThemeToggle";
+import SearchBox from "@/app/components/SearchBox";
+import ThemeToggle from "@/app/components/ThemeToggle";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
