@@ -1,6 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { BsSun, BsMoon } from "react-icons/bs";
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -12,10 +13,10 @@ export default function ThemeToggle() {
 
   return (
     <button
-      className="p-3 text-2xl sm:text-3xl transition-transform duration-200 hover:scale-125"
+      className="p-2 text-xl sm:text-2xl transition-transform duration-200 hover:scale-125"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
-      {theme === "dark" ? "☀️" : "🌙"}
+      {theme === "dark" ? <BsSun /> : <BsMoon />}
     </button>
   );
 }
