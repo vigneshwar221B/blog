@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { CodeBlock, dracula, oneLight, PrismLanguage } from "@react-email/code-block";
+import {
+  CodeBlock,
+  dracula,
+  oneLight,
+  PrismLanguage,
+} from "@react-email/code-block";
 import { FaClipboard, FaCheck } from "react-icons/fa";
 
 type CodeProps = {

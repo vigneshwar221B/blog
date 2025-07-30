@@ -95,7 +95,7 @@ export default function CustomPortableText({
               language={value.language}
             /> */}
             <CodeBlock
-              code = {value.code}
+              code={value.code}
               language={value.language}
               theme={resolvedTheme ?? "light"}
             />

@@ -10,7 +10,8 @@
     "presetup": "echo 'about to setup env variables, follow the guide here: https://github.com/vercel/next.js/tree/canary/examples/cms-sanity#using-the-sanity-cli'",
     "setup": "npx sanity@latest init --env .env.local",
     "postsetup": "echo 'create the read token by following the rest of the guide: https://github.com/vercel/next.js/tree/canary/examples/cms-sanity#creating-a-read-token'",
-    "typegen": "sanity schema extract && sanity typegen generate"
+    "typegen": "sanity schema extract && sanity typegen generate",
+    "prepare": "husky"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",
@@ -51,7 +52,14 @@
     "eslint": "^9.13.0",
     "eslint-config-next": "^15.0.0",
     "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,md,json,css,scss,html}": [
+      "prettier --write"
+    ]
   }
 }
