@@ -23,14 +23,13 @@ function Intro(props: { title: string | null | undefined; description: any }) {
 
   return (
     <section className="mt-16 mb-16 flex flex-col items-center lg:mb-12 lg:flex-row lg:justify-between">
-      <h1 className="text-balance text-4xl font-bold leading-tight tracking-tighter lg:pr-8 lg:text-5xl underline decoration-[#ff5722] decoration-[0.3rem]">
+      <h1 className="text-balance text-4xl font-bold leading-tight tracking-tighter lg:pr-8 lg:text-5xl underline decoration-[#ff5722] decoration-[0.5rem]">
         {title}
       </h1>
       <h2 className="text-pretty text-center text-lg lg:pl-8 lg:text-left">
         <PortableText className="prose-lg" value={description} />
       </h2>
 
-      {/* 👇 New wrapper for Theme + Search */}
       <div className="mt-4 flex items-center gap-4 lg:mt-0">
         <ThemeToggle />
         <SearchBox />
@@ -104,7 +103,7 @@ export default async function Page() {
       )}
       {heroPost?._id && (
         <aside>
-          <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
+          <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl underline decoration-[#7e3ff2] decoration-[0.5rem]">
             More Stories
           </h2>
           <Suspense>

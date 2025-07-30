@@ -69,7 +69,7 @@ export default async function PostPage({ params }: Props) {
   return (
     <div className="container mx-auto px-5 dark:text-white">
       <div className="mb-16 mt-10 flex items-center justify-between gap-4">
-        <h2 className="text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter dark:text-white underline decoration-[#64b5f6] decoration-[0.3rem]">
+        <h2 className="text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter dark:text-white underline decoration-[#64b5f6] decoration-[0.4rem]">
           <Link href="/" className="hover">
             {settings?.title || demo.title}
           </Link>
@@ -119,7 +119,7 @@ export default async function PostPage({ params }: Props) {
       </article>
       <aside>
         <hr className="border-accent-2 mb-24 mt-28" />
-        <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
+        <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl underline decoration-[#7e3ff2] decoration-[0.5rem]">
           Recent Stories
         </h2>
         <Suspense>
