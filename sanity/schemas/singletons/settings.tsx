@@ -118,6 +118,12 @@ export default defineType({
         }),
       ],
     }),
+    {
+      name: "resumeLink",
+      title: "Resume Link",
+      type: "url",
+      description: "Add your resume URL to show a hiring banner",
+    },
   ],
   preview: {
     prepare() {

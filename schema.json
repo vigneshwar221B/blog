@@ -1011,6 +1011,13 @@
           }
         },
         "optional": true
+      },
+      "resumeLink": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
       }
     }
   },

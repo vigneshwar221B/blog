@@ -3,16 +3,11 @@ import "../globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import type { Metadata } from "next";
-import {
-  VisualEditing,
-  toPlainText,
-  type PortableTextBlock,
-} from "next-sanity";
+import { VisualEditing, toPlainText } from "next-sanity";
 import { Inter } from "next/font/google";
 import { draftMode } from "next/headers";
 
 import AlertBanner from "./alert-banner";
-import PortableText from "./portable-text";
 
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
@@ -80,6 +75,19 @@ export default async function RootLayout({
         <Providers>
           <section className="min-h-screen">
             {isDraftMode && <AlertBanner />}
+            {data?.resumeLink && (
+              <div className="bg-yellow-100 text-black text-center py-3 px-4 font-semibold">
+                💼 Actively seeking new opportunities!{" "}
+                <a
+                  href={data.resumeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  View My Resume
+                </a>
+              </div>
+            )}
             <main>{children}</main>
             <footer className="bg-accent-1 border-accent-2 border-t">
               <div className="container mx-auto px-5">
