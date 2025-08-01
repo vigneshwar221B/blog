@@ -54,11 +54,24 @@ export default function CustomPortableText({
     marks: {
       link: ({ children, value }) => {
         return (
-          <a href={value?.href} rel="noreferrer noopener">
+          <a
+            href={value?.href}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="underline underline-offset-8 hover:text-[#f50057] text-[#f06292]"
+          >
             {children}
           </a>
         );
       },
+      code: ({ children }) => (
+        <span
+          className="rounded px-1 py-0.5 text-sm font-mono"
+          style={{ backgroundColor: "#607d8b", color: "white" }}
+        >
+          {children}
+        </span>
+      ),
     },
 
     types: {
@@ -89,11 +102,6 @@ export default function CustomPortableText({
       code: ({ value }) => {
         return (
           <div className="text-lg p-5 overflow-auto leading-relaxed">
-            {/* <CodeBlock
-              code={value.code}
-              theme={resolvedTheme === "dark" ? dracula : oneLight}
-              language={value.language}
-            /> */}
             <CodeBlock
               code={value.code}
               language={value.language}

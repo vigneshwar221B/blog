@@ -3,32 +3,31 @@
 import { useState, useEffect } from "react";
 
 export default function Title({ title }: { title: string }) {
-  const [clickCount, setClickCount] = useState(0);
+  const [hovering, setHovering] = useState(false);
 
   const firstLetter = title.charAt(0);
   const restOfTitle = title.slice(1);
 
   useEffect(() => {
-    if (clickCount === 5) {
-      window.open("https://www.youtube.com/shorts/FPTEdeixfNg", "_blank");
-      setClickCount(0);
-    }
-  }, [clickCount]);
+    const handleKey = (e: KeyboardEvent) => {
+      if (hovering && e.key.toLowerCase() === "v") {
+        window.open("https://www.youtube.com/shorts/FPTEdeixfNg", "_blank");
+      }
+    };
 
-  const handleClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setClickCount((prev) => prev + 1);
-  };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [hovering]);
 
   return (
-    <h1 className="text-balance text-4xl font-bold leading-tight tracking-tighter lg:pr-8 lg:text-5xl underline decoration-[#ff5722] decoration-[0.5rem] underline-offset-[0.8rem]">
+    <>
       <span
-        onClick={handleClick}
-        className="inline-block underline decoration-[#ff5722] decoration-[0.5rem] underline-offset-[0.8rem]"
+        onMouseEnter={() => setHovering(true)}
+        onMouseLeave={() => setHovering(false)}
       >
         {firstLetter}
       </span>
       {restOfTitle}
-    </h1>
+    </>
   );
 }
