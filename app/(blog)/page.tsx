@@ -14,6 +14,7 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 import SearchBox from "@/app/components/SearchBox";
 import ThemeToggle from "@/app/components/ThemeToggle";
+import Title from "../components/Title";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
@@ -24,7 +25,7 @@ function Intro(props: { title: string | null | undefined; description: any }) {
   return (
     <section className="mt-16 mb-16 flex flex-col items-center lg:mb-12 lg:flex-row lg:justify-between">
       <h1 className="text-balance text-4xl font-bold leading-tight tracking-tighter lg:pr-8 lg:text-5xl underline decoration-[#ff5722] decoration-[0.5rem] underline-offset-[0.8rem]">
-        {title}
+        <Title title={title} />
       </h1>
 
       <h2 className="text-pretty text-center text-lg lg:pl-8 lg:text-left">
