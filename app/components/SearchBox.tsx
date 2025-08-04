@@ -9,7 +9,7 @@ export default function SearchBox() {
   const [results, setResults] = useState<any[]>([]);
   const [open, setOpen] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
-  const debounceRef = useRef<NodeJS.Timeout | null>(null); // for debouncing
+  const debounceRef = useRef<NodeJS.Timeout | null>(null);
 
   // Debounced fetch
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function SearchBox() {
       fetch(`/api/search?q=${encodeURIComponent(query)}`)
         .then((res) => res.json())
         .then((data) => setResults(data.results));
-    }, 500); // debounce
+    }, 200); // debounce
   }, [query]);
 
   // Close on outside click
